@@ -5,17 +5,17 @@ import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "category")
+@Table(name = "roles")
 @DynamicUpdate
-public class Category {
+public class Roles {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
 
-    @Column(name = "category_name", unique = true, nullable = true)
-    private String categoryName;
+    @Column(name = "role_name", unique = true, nullable = true)
+    private String roleName;
 
     public int getId() {
         return id;
@@ -25,11 +25,11 @@ public class Category {
         this.id = id;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 }
